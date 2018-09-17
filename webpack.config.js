@@ -60,6 +60,7 @@ module.exports = {
       extensions: [ '.tsx', '.ts', '.js' ],
    },
    optimization: NODE_ENV === 'production' ? {
+      nodeEnv: 'production',
       runtimeChunk: 'single',
       splitChunks: {
          chunks: 'all',
@@ -77,12 +78,13 @@ module.exports = {
          },
       }
    } : { // no optimizations for development
+      nodeEnv: 'development',
       removeAvailableModules: false,
       removeEmptyChunks: false,
       splitChunks: false,
    },
    plugins: [
-      ! produciton && new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true, tsconfig: './tsconfig.json' }) || undefined,
+      ! produciton ? new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true, tsconfig: './tsconfig.json' }) : _=>_,
       new webpack.ProgressPlugin({ profile: false }),
       new CleanWebpackPlugin([ 'dist' ], { root: __dirname, exclude: [ '.gitkeep' ], verbose: true }),
       new webpack.HashedModuleIdsPlugin(), // so that file hashes don't change unexpectedly
