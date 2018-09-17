@@ -1,4 +1,4 @@
-import angular from 'angular';
+import * as angular from 'angular';
 import { AppComponent } from './app.component';
 import { ComponentsModule } from './components/components.module';
 import uiRouter from '@uirouter/angularjs';
