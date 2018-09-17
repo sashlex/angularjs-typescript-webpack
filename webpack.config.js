@@ -54,7 +54,7 @@ module.exports = {
       }, {
          test: /\.(less|css)$/,
          use: [ MiniCssExtractPlugin.loader, 'css-loader', 'less-loader' ],
-         exclude: /node_modules/,
+         exclude: /node_modules\/(?!(angular-material)\/).*/, // https://github.com/webpack/webpack/issues/2031#issuecomment-219040479
       }]
    },
    resolve: {
@@ -69,11 +69,10 @@ module.exports = {
          minSize: 0,
          cacheGroups: {
             vendor: {
-               // https://hackernoon.com/the-100-correct-way-to-split-your-chunks-with-webpack-f8a9df5b7758
                test: /[\\/]node_modules[\\/]/,
-               name( module ) {
+               name( module ) { // https://hackernoon.com/the-100-correct-way-to-split-your-chunks-with-webpack-f8a9df5b7758
                   const packageName = module.context.match( /[\\/]node_modules[\\/](.*?)([\\/]|$)/ )[ 1 ]; // get the name. E.g. node_modules/packageName/not/this/part.js or node_modules/packageName
-                  return `npm.${ packageName.replace( '@', '' ) }`; // npm package names are URL-safe, but some servers don't like @ symbols
+                  return `vendor.${ packageName.replace( '@', '' ) }`; // npm package names are URL-safe, but some servers don't like @ symbols
                },
             },
          },
