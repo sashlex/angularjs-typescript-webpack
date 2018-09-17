@@ -1,4 +1,4 @@
-## AngularJS, Typescript, Webpack boilerplate:
+## AngularJS, Typescript, Webpack boilerplate.
 [Source](https://github.com/toddmotto/angularjs-styleguide/tree/master/typescript)
 
 ### Install:
