@@ -8,10 +8,10 @@ const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const ngAnnotatePlugin = require( 'ng-annotate-webpack-plugin' );
 const NODE_ENV = process.env.NODE_ENV || 'development';
-const produciton = NODE_ENV === 'production';
+const production = NODE_ENV === 'production';
 
 module.exports = {
-   mode: produciton && 'produciton' || 'development',
+   mode: production && 'produciton' || 'development',
    entry: {
       app: './app/app.module',
    },
@@ -19,7 +19,7 @@ module.exports = {
       path: path.resolve( __dirname, 'dist' ),
       publicPath: '/',
       filename: '[name].[contenthash:8].js',
-      pathinfo: ! produciton
+      pathinfo: !  production
       // productPage: path.resolve( __dirname, 'src/ProductPage.js' ),
       // icon: path.resolve( __dirname, 'src/Icon.js'),
    },
@@ -41,8 +41,8 @@ module.exports = {
                loader: 'ts-loader',
                options: {
                   configFile: './tsconfig.json',
-                  transpileOnly: ! produciton,
-                  experimentalWatchApi: ! produciton,
+                  transpileOnly: ! production,
+                  experimentalWatchApi: ! production,
                   happyPackMode: true, // typecheck in fork-ts-checker-webpack-plugin for build perf
                }}
          ],
@@ -60,7 +60,7 @@ module.exports = {
    resolve: {
       extensions: [ '.tsx', '.ts', '.js' ],
    },
-   optimization: NODE_ENV === 'production' ? {
+   optimization: production ? {
       nodeEnv: 'production',
       runtimeChunk: 'single',
       splitChunks: {
@@ -84,7 +84,7 @@ module.exports = {
       splitChunks: false,
    },
    plugins: [
-      ! produciton ? new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true, tsconfig: './tsconfig.json' }) : _=>_,
+      ! production ? new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true, tsconfig: './tsconfig.json' }) : _=>_,
       new webpack.ProgressPlugin({ profile: false }),
       new CleanWebpackPlugin([ 'dist' ], { root: __dirname, exclude: [ '.gitkeep' ], verbose: true }),
       new webpack.HashedModuleIdsPlugin(), // so that file hashes don't change unexpectedly
