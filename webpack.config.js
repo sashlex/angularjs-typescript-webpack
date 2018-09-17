@@ -40,6 +40,7 @@ module.exports = {
             {
                loader: 'ts-loader',
                options: {
+                  configFile: './tsconfig.json',
                   transpileOnly: ! produciton,
                   experimentalWatchApi: ! produciton,
                   happyPackMode: true, // typecheck in fork-ts-checker-webpack-plugin for build perf
