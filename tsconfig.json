@@ -9,7 +9,9 @@
       "allowJs": true,
       "allowSyntheticDefaultImports": true,
       "esModuleInterop": true,
-      "types": [ "angular" ],
+      "types": [
+         "angular"
+      ],
       "noEmit": false,
       "moduleResolution": "node"
    },
