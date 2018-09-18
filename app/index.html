@@ -2,12 +2,15 @@
 <html>
    <head>
       <base href = '/' >
+      <link rel = 'stylesheet' href = '//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic' >
    </head>
    <body>
-      <p class = 'menu' >
-         <a href = '/' >home</a><br>
-         <a href = '/mc-dates' >datepicker</a>
-      </p>
+      <md-content layout-padding layout-margin >
+         <section layout = 'row' layout-align = 'start center' layout-wrap >
+            <md-button ng-href = '/' class = 'md-raised'>Home</md-button>
+            <md-button ng-href = '/mc-dates' class = 'md-raised'>Datepicker</md-button>
+         </section>
+      </md-content>
       <ui-view></ui-view>
    </body>
 </html>
