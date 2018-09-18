@@ -1,7 +1,7 @@
 export class McDatesItem {
    constructor(
-      public title: string = '',
-      public completed: boolean = false
+      public date1: object,
+      public date2: object
    ) {
    }
 }
