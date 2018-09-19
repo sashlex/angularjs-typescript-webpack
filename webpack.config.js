@@ -98,5 +98,6 @@ module.exports = {
       new ngAnnotatePlugin({
          add: true,
       }),
+      new webpack.IgnorePlugin( /^\.\/locale$/, /moment$/ ), // ignore unwanted moment locales ( https://github.com/moment/moment/issues/2517#issuecomment-393704231 )
    ],
 };

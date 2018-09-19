@@ -12,12 +12,12 @@ import './app.less';
 
 const app = angular
    .module( 'app', [
-      ComponentsModule,
       uiRouter,
       ngAnimate,
       ngAria,
       ngMaterial,
-      hmTouchEvents
+      hmTouchEvents,
+      ComponentsModule,
    ])
    .component( 'app', AppComponent )
    .config(( $stateProvider, $locationProvider ) => {

@@ -9,5 +9,4 @@ export class McDates implements angular.IDirective {
       this.restrict = 'A';
       this.template = template;
    }
-
 }

@@ -1,12 +1,16 @@
 import { McDatesItem } from './mc-dates.model';
 
 export class McDatesController {
-   public date1: object;
-   public date2: object;
+   public mcdates: object;
 
    $onInit() {
-      this.date1 = new Date();
-      this.date2 = new Date();
+      this.mcdates = new McDatesItem( new Date());
+   }
+
+   /**
+    * @return {undefined}
+    */
+   changeDate() {
    }
 
 }
