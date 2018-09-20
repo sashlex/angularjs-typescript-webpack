@@ -13,7 +13,7 @@ export class McDatesController {
    /**
     * @return {undefined}
     */
-   changeDate() {
+   changeDate( date: string ) {
    }
 
 }
