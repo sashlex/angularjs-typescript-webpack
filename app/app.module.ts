@@ -8,6 +8,7 @@ import * as ngMaterial from 'angular-material';
 import 'angular-material/angular-material.min.css';
 import 'hammerjs';
 import * as hmTouchEvents from 'angular-hammer';
+
 import './app.less';
 
 const app = angular

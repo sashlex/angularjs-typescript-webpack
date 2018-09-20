@@ -5,10 +5,12 @@ import uiRouter from '@uirouter/angularjs';
 import moment = require( 'moment' ); // https://github.com/moment/moment/blob/develop/typing-tests/moment-tests.ts
 import 'moment/locale/ru';
 moment.locale( 'ru' );
+import * as uiMask from 'angular-ui-mask';
 
 export const McDatesModule = angular
    .module( 'mcDates', [
       uiRouter,
+      uiMask
    ])
    .component( 'mcDatesComponent', McDatesComponent )
    .directive( 'mcDates', () => new McDates())

@@ -2,7 +2,7 @@
   <div layout = 'row' >
     <md-input-container class = 'md-block' >
       <label>Date 1</label>
-      <input ng-model = '$ctrl.mcdates.inputDate1' ng-change = '$ctrl.changeDate()' md-min-date = 'minDate' >
+      <input type = 'text' ng-model = '$ctrl.mcdates.inputDate1' ng-change = '$ctrl.changeDate()' md-min-date = 'minDate' ui-mask = '99.99.9999' placeholder = '01.01.2000' ng-pattern = '/^[0-9]{2}\.[0-9]{2}\.[0-9]{4}$/' >
     </md-input-container>
     <md-input-container>
       <label>Enter date 1</label>
@@ -13,7 +13,7 @@
   <div layout = 'row' >
     <md-input-container class = 'md-block' >
       <label>Date 2</label>
-      <input ng-model = '$ctrl.mcdates.inputDate2' ng-change = '$ctrl.changeDate()' >
+      <input type = 'text' ng-model = '$ctrl.mcdates.inputDate2' ng-change = '$ctrl.changeDate()' md-min-date = 'minDate' ui-mask = '99.99.9999' placeholder = '01.01.2000' ng-pattern = '/^[0-9]{2}\.[0-9]{2}\.[0-9]{4}$/' >
     </md-input-container>
     <md-input-container>
       <label>Enter date 2</label>
@@ -21,3 +21,4 @@
     </md-input-container>
   </div>
 </md-content>
+
