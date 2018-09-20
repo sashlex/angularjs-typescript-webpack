@@ -28,7 +28,7 @@ export const McDatesModule = angular
       $mdDateLocaleProvider.firstDayOfWeek = 1;
       $mdDateLocaleProvider.shortMonths = [ 'Янв', 'Фев', 'Март', 'Апр','Май','Июнь','Июль','Авг','Сен','Окт','Ноя','Дек' ];
       $mdDateLocaleProvider.shortDays = [ 'Вс','Пн','Вт','Ср','Чт','Пт','Сб' ];
-      $mdDateLocaleProvider.formatDate = date => ( date !== '' && date !== null ) && moment(date).format( 'DD.MM.YYYY' ) || null;
+      $mdDateLocaleProvider.formatDate = date => ( date !== '' && date !== null ) && moment( date ).format( 'DD.MM.YYYY' ) || null;
 
    })
    .name;
