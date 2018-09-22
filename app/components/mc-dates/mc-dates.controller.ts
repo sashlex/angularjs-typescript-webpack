@@ -16,6 +16,7 @@ export class McDatesController {
     * @return {undefined}
     */
    changeDate( id: number ) {
+      // this.form.inputDate1.$setValidity( 'required', false );
       id === 11 && moment( this.mcdates.inputDate1, 'DDMMYYYY', true ).isValid() && ( this.mcdates.date1 = moment( this.mcdates.inputDate1, 'DDMMYYYY', true ).toDate());
       id === 21 && moment( this.mcdates.inputDate2, 'DDMMYYYY', true ).isValid() && ( this.mcdates.date2 = moment( this.mcdates.inputDate2, 'DDMMYYYY', true ).toDate());
       id === 12 && ( this.mcdates.inputDate1 = moment( this.mcdates.date1 ).format( 'DDMMYYYY' ));

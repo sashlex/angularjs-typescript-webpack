@@ -6,10 +6,12 @@ import moment = require( 'moment' ); // https://github.com/moment/moment/blob/de
 import 'moment/locale/ru';
 moment.locale( 'ru' );
 import * as uiMask from 'angular-ui-mask';
+import * as ngMessages from 'angular-messages';
 
 export const McDatesModule = angular
    .module( 'mcDates', [
       uiRouter,
+      ngMessages,
       uiMask
    ])
    .component( 'mcDatesComponent', McDatesComponent )
