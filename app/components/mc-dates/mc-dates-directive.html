@@ -18,7 +18,7 @@
       <div layout = 'row' >
          <md-input-container class = 'md-block' >
             <label>Date 2</label>
-            <input type = 'text' name = 'inputDate2' ng-model = '$ctrl.mcdates.inputDate2' ng-change = '$ctrl.changeDate( 21 )' md-min-date = 'minDate' ui-mask = '99.99.9999' placeholder = '..........' ng-pattern = '/^[0-9]{2}\.[0-9]{2}\.[0-9]{4}$/' >
+            <input required type = 'text' name = 'inputDate2' ng-model = '$ctrl.mcdates.inputDate2' ng-change = '$ctrl.changeDate( 21 )' md-min-date = 'minDate' ui-mask = '99.99.9999' placeholder = '..........' ng-pattern = '/^[0-9]{2}\.[0-9]{2}\.[0-9]{4}$/' >
             <div ng-messages = '$ctrl.mcdates.inputDate2.$error' >
                <div ng-message = 'required' >Required</div>
                <div ng-message = 'mindate' >Date 2 can't be greater than date 1</div>
