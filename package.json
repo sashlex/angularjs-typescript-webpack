@@ -11,7 +11,7 @@
       "clean": "rimraf dist/ .cache-loader/"
    },
    "author": "sashlex",
-   "license": "ISC",
+   "license": "MIT",
    "devDependencies": {
       "cache-loader": "^1.2.2",
       "clean-webpack-plugin": "^0.1.19",
